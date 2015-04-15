@@ -1,2 +1,28 @@
-<div>Start a video call</div>
-<video autoplay></video>
+<button ng-click="showForm()">Join a Video Call</button>
+
+<video autoplay id="alice"></video>
+<div ng-show="!toggle" id="alice">
+	<div id="showLocalOffer" ng-show='!offerToggle'>
+ 		<textarea id="localOffer" cols="50" rows="10" ng-model="localOffer"></textarea>
+		<button ng-click="showOfferToggle()">Okay, I Sent it.</button>
+ 	</div>
+
+	<div id="getRemoteAnswer" ng-show="offerToggle">
+ 		<textarea id="remoteAnswer" cols="50" rows="10" ng-model="remoteAnswer"></textarea>
+		<button ng-click="getRemoteAnswer(remoteAnswer)">Okay, I Pasted it.</button>
+ 	</div>
+</div>
+
+
+<video autoplay id='bob'></video>
+<div ng-show="toggle" id="bob">
+ 	<div id="getRemoteOffer" ng-show="!bob">
+ 		<textarea id="remoteOffer" cols="50" rows="10" ng-model="remoteOffer"></textarea>
+		<button ng-click="showBob(remoteOffer)">Okay, I Pasted it.</button>
+ 	</div>
+
+ 	<div id="showLocalAnswer" ng-show='bob'>
+		<textarea id="localAnswer" cols="50" rows="10" ng-model="localAnswer"></textarea>
+		<button ng-click="">Okay, I Sent it.</button>
+ 	</div>
+</div>
