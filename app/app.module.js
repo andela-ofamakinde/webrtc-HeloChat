@@ -9,11 +9,11 @@ myApp.config(['$routeProvider',
   }).
   when('/textchat', {
     templateUrl: 'app/component/textchat/text.view.html',
-    controller: 'textCtrl'
+    controller: 'RespokeTextController'
   }).
    when('/videochat', {
     templateUrl: 'app/component/videochat/video.view.html',
-    controller: 'videoCtrl'
+    controller: 'RespokeVideoController'
   }).
   otherwise({
     redirectTo: '/homeview'

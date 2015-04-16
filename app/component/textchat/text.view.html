@@ -1,4 +1,7 @@
 <div>Start a text chat here</div>
-<p>Click to join a chatroom or create a chat room</p>
-<button>Create</button>
-<button>Join</button>
+<h3 ng-show="client.isConnected()">Connected as {{username}} </h3>
+
+<div ng-show="!client.isConnected()">
+<input placeholder="My Username" ng-model="username" type="text" autofocus />
+<button ng-click="connect()">Create</button>
+</div>

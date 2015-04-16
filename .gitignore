@@ -1,8 +1,9 @@
-logs/*
-!.gitkeep
-node_modules/
-tmp
-.idea
 .DS_Store
-angular-phonecat-snapshots
-bower_components/
+.nodemonignore
+.sass-cache/
+npm-debug.log
+node_modules/
+.libs/
+app/tests/coverage/
+.bower-*/
+.idea/
