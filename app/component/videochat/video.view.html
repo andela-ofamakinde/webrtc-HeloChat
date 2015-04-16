@@ -1,14 +1,8 @@
 
-<!-- <button class="btn">Create a chatroom id</button>
-<br>
-<br>
-<br>
-<button class="btn" ng-click="showForm()">Join</button>
-Enter the chatRoom ID: <input type="text"> -->
-
 <h3 ng-show="client.isConnected()">Connected as {{username}} </h3>
 
 <div ng-show="!client.isConnected()">
+<h3>Enter your Username below to get connected</h3>
 <input placeholder="My Username" ng-model="username" type="text" autofocus />
 <button ng-click="connect()">Connect</button>
 </div>
