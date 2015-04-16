@@ -1,7 +1,22 @@
-<div>Start a text chat here</div>
-<h3 ng-show="client.isConnected()">Connected as {{username}} </h3>
-
-<div ng-show="!client.isConnected()">
-<input placeholder="My Username" ng-model="username" type="text" autofocus />
-<button ng-click="connect()">Create</button>
+<h3 id="status">{{status}}</h3>
+<div id="login">
+    User Name:
+    <input id="endpoint" type="text" ng-model='endpoint'/>
+    <input id="doLogin" type="button" value="Connect" ng-click='doLogin()' />
+</div>
+<div id="messaging">
+    <ul id="messages">
+        <li ng-repeat='msg in myMessage'>
+            {{endpoint}} : {{msg.message}}
+        </li>
+        <li ng-repeat='message in messageArray'>
+            {{remote}} : {{message.message}}
+        </li>
+    </ul><br />
+    Send To:
+    <input id="remoteId" type="text" ng-model='remote'/><br />
+    <textarea id="textToSend" rows="2" ng-model='messageText'></textarea><br />
+    <input id='sendMessage' type='button' value='Send Message' ng-click='sendMessage()' />
+    <input id='makeCall' type='button' value='Audio Call' ng-click='makeCall()' />
+    <input id='endCall' type='button' value='Hang Up' ng-click='endCall()' />
 </div>
