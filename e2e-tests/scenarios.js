@@ -1,42 +1,39 @@
 'use strict';
 
-/* https://github.com/angular/protractor/blob/master/docs/toc.md */
-
 describe('myApp', function() {
 
-  browser.get('index.html');
+  browser.get('');
 
   it('should automatically redirect to /home.view when location hash/fragment is empty', function() {
     expect(browser.getLocationAbsUrl()).toMatch("/homeview");
   });
 
+});
 
-  describe('view1', function() {
+describe('textchat', function() {
 
-    beforeEach(function() {
-      browser.get('index.html#/view1');
-    });
-
-
-    it('should render view1 when user navigates to /view1', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 1/);
-    });
-
+  beforeEach(function() {
+    browser.get('#/textchat');
   });
 
-
-  describe('view2', function() {
-
-    beforeEach(function() {
-      browser.get('index.html#/view2');
-    });
-
-
-    it('should render view2 when user navigates to /view2', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 2/);
-    });
-
+  var button = element.all(by.id("textbtn"));
+  it('should render textchat view when user navigates to /textchat', function() {
+    button.click();
+    expect(browser.getLocationAbsUrl()).toMatch("/textchat");
   });
+
+});
+
+describe('videochat', function() {
+
+  beforeEach(function() {
+    browser.get('#/videochat');
+  });
+
+  var button = element.all(by.id("videotbtn"));
+  it('should render videochat view when user navigates to /videochat', function() {
+    button.click();
+    expect(browser.getLocationAbsUrl()).toMatch("/videochat");
+  });
+
 });
