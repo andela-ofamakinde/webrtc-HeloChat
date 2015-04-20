@@ -1,12 +1,12 @@
-//set the video elements
+  //set the video elements
 function setVideo(elementId, videoElement) {
-var videoParent = document.getElementById(elementId);
-videoParent.innerHTML = "";
-videoParent.appendChild(videoElement);
+  var videoParent = document.getElementById(elementId);
+  videoParent.innerHTML = "";
+  videoParent.appendChild(videoElement);
 }
-
 myApp.controller('VtCtrl', ['$scope', function($scope) {
-  $scope.username = "";
+
+ $scope.username = "";
  $scope.friendId = "";
  $scope.activeCall = null;
  $scope.messageArray = [];

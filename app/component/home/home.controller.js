@@ -1,5 +1,2 @@
-
-var homeCtrl = myApp.controller("homeCtrl", function($scope){
-	
-});
-// 
+// var homeCtrl = myApp.controller("homeCtrl", function($scope){	
+// });

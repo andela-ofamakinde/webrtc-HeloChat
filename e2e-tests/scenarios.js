@@ -1,6 +1,6 @@
 'use strict';
 
-describe('myApp', function() {
+describe('WebRTC', function() {
 
   browser.get('');
 
@@ -17,7 +17,7 @@ describe('videoandtext', function() {
   });
 
   var button = element.all(by.id("startbtn"));
-  it('should render textchat view when user navigates to /videoandtext', function() {
+  it('should render video and text view when user navigates to /videoandtext', function() {
     button.click();
     expect(browser.getLocationAbsUrl()).toMatch("/videoandtext");
   });
