@@ -96,7 +96,6 @@ $scope.doLogin = function() {
 
 
 $scope.sendMessage = function() {
-  console.log('ola: ', $scope.remote);
   $scope.myMessage.push({message: $scope.messageText});
 
   var endpoint = $scope.callClient.getEndpoint({id: $scope.remote});
