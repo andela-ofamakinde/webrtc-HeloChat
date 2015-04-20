@@ -52,6 +52,7 @@
  <button class="btn" ng-click="doLogin()">Start Text</button>
   <div id="messaging">
   <ul id="messages">
+  <li><span class="blue-text">View Messages here</span></li>
    <li ng-repeat='msg in myMessage'>
   {{username}} : {{msg.message}}
    </li>
@@ -59,11 +60,10 @@
   {{remote}} : {{message.message}}
   </li>
   </ul><br/>
-  <img height="120px" src="assets/images/text.jpg">
   <h3>Send To:</h3>
    <div class="row">
   <div class="input-field col s4">
-  <input id="remoteId" type="text" ng-model='remote'/><br />
+  <input placeholder="Username to chat with" id="remoteId" type="text" ng-model='remote'/><br />
   </div>
   </div>
   <div class="row">
