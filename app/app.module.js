@@ -7,14 +7,6 @@ myApp.config(['$routeProvider',
     templateUrl: 'app/component/home/home.view.html',
     controller: 'homeCtrl'
   }).
-  when('/textchat', {
-    templateUrl: 'app/component/textchat/text.view.html',
-    controller: 'RespokeTextController'
-  }).
-   when('/videochat', {
-    templateUrl: 'app/component/videochat/video.view.html',
-    controller: 'RespokeVideoController'
-  }).
     when('/videoandtext', {
     templateUrl: 'app/component/videoandtext/videoandtext.html',
     controller: 'VtCtrl'
@@ -26,6 +18,3 @@ myApp.config(['$routeProvider',
 
 var homeCtrl = myApp.controller("homeCtrl", function($scope){	
 });
-
-// var vTCtrl = myApp.controller("vTCtrl", function($scope){ 
-// });

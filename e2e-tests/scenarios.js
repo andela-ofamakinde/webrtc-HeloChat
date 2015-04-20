@@ -10,30 +10,17 @@ describe('myApp', function() {
 
 });
 
-describe('textchat', function() {
+describe('videoandtext', function() {
 
   beforeEach(function() {
-    browser.get('#/textchat');
+    browser.get('#/homeview');
   });
 
-  var button = element.all(by.id("textbtn"));
-  it('should render textchat view when user navigates to /textchat', function() {
+  var button = element.all(by.id("startbtn"));
+  it('should render textchat view when user navigates to /videoandtext', function() {
     button.click();
-    expect(browser.getLocationAbsUrl()).toMatch("/textchat");
+    expect(browser.getLocationAbsUrl()).toMatch("/videoandtext");
   });
 
 });
 
-describe('videochat', function() {
-
-  beforeEach(function() {
-    browser.get('#/videochat');
-  });
-
-  var button = element.all(by.id("videotbtn"));
-  it('should render videochat view when user navigates to /videochat', function() {
-    button.click();
-    expect(browser.getLocationAbsUrl()).toMatch("/videochat");
-  });
-
-});
