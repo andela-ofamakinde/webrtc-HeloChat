@@ -14,16 +14,25 @@
   </div>
 </div>
 
+
 <div ng-show="client.isConnected()">
  <div class="row">
-  <div class="input-field col s4">
-  <input placeholder="User to call" ng-model="friendId" type="text" autofocus ng-show="!activeCall" />
+  <div class="col s12 m7">
+  <div class="card">
+   <div class="card-content">
+    <div class="row">
+    <div class="input-field col s4">
+     <input placeholder="User to call" ng-model="friendId" type="text" autofocus ng-show="!activeCall" />
   </div>
- </div>
+  </div>
   <div class="col s4"><img class="responsive-img"src="assets/images/videoicon.jpg"></div>
   <button ng-click="call()" ng-show="!activeCall" class="btn">Call</button>
   <button ng-click="hangup()" ng-show="activeCall" class="btn">Hang up</button>
-</div>
+  </div>
+  </div>
+  </div>
+  </div>
+ </div>
 
 <div class="row">
  <div class="col s3 offset-s4">
@@ -33,10 +42,15 @@
 </div>
 
 <!-- text part-->
+
 <div ng-show="client.isConnected()">
-<h3>Click on the <span class="red-text">START TEXT</span> button to start</h3>
-<button class="btn" ng-click="doLogin()">Start Text</button>
-<div id="messaging">
+<div class="row">
+  <div class="col s12 m7">
+  <div class="card">
+    <div class="card-content">
+  <h3>Click on the <span class="red-text">START TEXT</span> button to start</h3>
+ <button class="btn" ng-click="doLogin()">Start Text</button>
+  <div id="messaging">
   <ul id="messages">
    <li ng-repeat='msg in myMessage'>
   {{username}} : {{msg.message}}
@@ -62,4 +76,9 @@
   <input class="btn" id='sendMessage' type='button' value='Send Message' ng-click='sendMessage()' />
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+
 
