@@ -5,15 +5,13 @@ videoParent.innerHTML = "";
 videoParent.appendChild(videoElement);
 }
 
-
-// var myApp = angular.module("myApp", ['ngRoute']);
-
-myApp.controller("RespokeVideoController", function($scope) {
- $scope.username = "";
+myApp.controller('VtCtrl', ['$scope', function($scope) {
+  $scope.username = "";
  $scope.friendId = "";
  $scope.activeCall = null;
-
- var callOptions = {
+ $scope.messageArray = [];
+ $scope.myMessage = [];
+  var callOptions = {
   onLocalMedia: function(evt) {
     setVideo('localVideoSource', evt.element)
   },
@@ -23,8 +21,10 @@ myApp.controller("RespokeVideoController", function($scope) {
   }
 };
 
+var appId = "69f1abbe-93d1-40db-aa81-b03858ec98c3";
+
 $scope.client = respoke.Client({
-  appId: "69f1abbe-93d1-40db-aa81-b03858ec98c3",
+  appId: appId,
   baseURL: "https://api.respoke.io",
   developmentMode: true
 });
@@ -54,6 +54,8 @@ $scope.connect = function () {
  $scope.client.connect({
  endpointId: $scope.username
  });
+
+ // $scope.doLogin();
 };
 
 //to make calls
@@ -68,4 +70,39 @@ $scope.call = function () {
  $scope.activeCall = null;
  };
 
+
+$scope.callClient = respoke.createClient({
+  appId: appId,
+  developmentMode: true
 });
+
+//for message
+$scope.callClient.listen('message', function(evt) {
+  $scope.$apply(function() {
+    $scope.message = evt.message.message;
+    $scope.messageArray.push({
+      remote: $scope.remote,
+      message: $scope.message
+    });
+  });
+});
+
+$scope.doLogin = function() {
+  console.log($scope.username);
+  $scope.callClient.connect({
+    endpointId : $scope.username
+  });
+}
+
+
+$scope.sendMessage = function() {
+  console.log('ola: ', $scope.remote);
+  $scope.myMessage.push({message: $scope.messageText});
+
+  var endpoint = $scope.callClient.getEndpoint({id: $scope.remote});
+
+  endpoint.sendMessage({message: $scope.messageText});
+
+};
+
+}]);
