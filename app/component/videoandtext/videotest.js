@@ -1,14 +1,15 @@
-describe("Unit: Testing Controllers", function() {
-
+describe("myApp", function(){
   beforeEach(module('myApp'));
+  var scope, controller;
 
-   it('should have a VtCtrl controller', function() {
-     expect(myApp.VtCtrl).not.to.equal(null);
-  });
-  var $controller;
-
-  beforeEach(inject(function(_$controller_) {
-    $controller = _$controller_;
+  beforeEach(inject(function($controller, $rootScope) {
+    scope = $rootScope.$new();
+    controller = $controller("VtCtrl", {
+      $scope: scope
+    });
   }));
 
+  it('checks for the username variable', function(){
+    expect(scope.username).toEqual('');
+  });
 });

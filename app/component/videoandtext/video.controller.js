@@ -54,8 +54,6 @@ $scope.connect = function () {
  $scope.client.connect({
  endpointId: $scope.username
  });
-
- // $scope.doLogin();
 };
 
 //to make calls
@@ -101,7 +99,7 @@ $scope.sendMessage = function() {
   var endpoint = $scope.callClient.getEndpoint({id: $scope.remote});
 
   endpoint.sendMessage({message: $scope.messageText});
-
+  $scope.messageText = "";
 };
 
 }]);
