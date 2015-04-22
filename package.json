@@ -1,9 +1,9 @@
 {
-  "name": "angular-seed",
+  "name": "respokeAPI-heloChat",
   "private": true,
   "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "description": "A video and text chat application",
+  "repository": "https://github.com/andela-ofamakinde/webrtc-HeloChat",
   "license": "MIT",
   "devDependencies": {
     "karma": "~0.10",
