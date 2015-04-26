@@ -81,7 +81,7 @@ myApp.controller('VtCtrl', ['$scope', function($scope) {
     $scope.$apply(function() {
       $scope.message = evt.message.message;
       $scope.messageArray.push({
-        remote: $scope.remote,
+        name: $scope.remote,
         message: $scope.message
       });
     });
@@ -96,7 +96,9 @@ myApp.controller('VtCtrl', ['$scope', function($scope) {
 
 
   $scope.sendMessage = function() {
-   $scope.messageArray.push({name: $scope.username, message: $scope.messageText});
+   $scope.messageArray.push(
+    {name: $scope.username,
+    message: $scope.messageText});
 
     var endpoint = $scope.callClient.getEndpoint({id: $scope.remote});
 
